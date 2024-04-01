@@ -25,7 +25,11 @@ class University {
     const index = this.students.indexOf(student);
     this.students.splice(index, 1);
   }
-  //มีอีกอันแต่ ขก. ละ เพราะไม่ได้อยู่ใน main
+  removeProfessor(professor) {
+    const index = this.professors.indexOf(professor);
+    this.professors.splice(index, 1);
+  }
+ 
   getDepartments() {
     var department = "";
     for (let i = 0; i < this.departments.length; i++) {
@@ -71,8 +75,16 @@ class Department {
   addStudent(student) {
     this.students.push(student);
   }
+  removeStudent(student) {
+    const index = this.students.indexOf(student);
+    this.students.splice(index, 1)
+  }
   addProfessor(professor) {
     this.professors.push(professor);
+  }
+  removeProfessor(professor) {
+    const index = this.professors.indexOf(professor);
+    this.professors.splice(index, 1);
   }
   getCourses() {
     let course = "";
@@ -114,6 +126,10 @@ class Course {
   }
   addStudent(student) {
     this.Students.push(student);
+  }
+  removeStudent(student){
+    const index = this.Students.indexOf(student);
+    this.Students.splice(index, 1);
   }
   setProfessor(professor) {
     this.professor = professor;
